@@ -42,6 +42,9 @@ fn main() {
         // no expect. So to fix your error- would be to write error-handling code.
         .expect("Failed to read line");
 
+    let guess: u32 = guess.trim().parse().expect("Please type a number!");
+
+
     // Using our little crab pincers {} to place our variable in the println
     println!("You guessed: {guess}");
 
