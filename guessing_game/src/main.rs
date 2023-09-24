@@ -12,6 +12,7 @@ fn main() {
     let secret_number = rand::thread_rng().gen_range(1..=100);
     println!("The secret number is: {secret_number}");
 
+    loop{
     println!("Please input your guess.");
 
     // this creates a new mutable string
@@ -42,6 +43,9 @@ fn main() {
         // no expect. So to fix your error- would be to write error-handling code.
         .expect("Failed to read line");
 
+    // this allows rust to reuse the 'guess' variable name
+    // and convert the string to an integer by using .trim() to rid of whitespace
+    // and .parse() to grab the data
     let guess: u32 = guess.trim().parse().expect("Please type a number!");
 
 
@@ -54,6 +58,7 @@ fn main() {
         Ordering::Equal => println!("You win! Winner Winner"),
 
     }
+}
 }
 
 // fn main() {
