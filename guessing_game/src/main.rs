@@ -10,7 +10,6 @@ fn main() {
     // this is because Rng is a trait that when in scope gives access
     // to different RNG methods
     let secret_number = rand::thread_rng().gen_range(1..=100);
-    println!("The secret number is: {secret_number}");
 
     loop{
     println!("Please input your guess.");
@@ -46,7 +45,10 @@ fn main() {
     // this allows rust to reuse the 'guess' variable name
     // and convert the string to an integer by using .trim() to rid of whitespace
     // and .parse() to grab the data
-    let guess: u32 = guess.trim().parse().expect("Please type a number!");
+    let guess: u32 = match guess.trim().parse() {
+        Ok(num) => num,
+        Err(_) => continue,
+    };
 
 
     // Using our little crab pincers {} to place our variable in the println
@@ -63,13 +65,3 @@ fn main() {
     }
 }
 }
-
-// fn main() {
-//     println!("Welcome to Kip's Calculator");
-
-//     println!("Please choose which operation you'd like to do")
-
-//     let mut operation = String::new();
-
-//     if
-// }

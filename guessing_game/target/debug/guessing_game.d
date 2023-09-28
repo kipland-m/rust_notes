@@ -1,1 +1,1 @@
-/Users/kipland/Documents/Rust/guessing_game/target/debug/guessing_game: /Users/kipland/Documents/Rust/guessing_game/src/main.rs
+/home/kip/rust_notes/guessing_game/target/debug/guessing_game: /home/kip/rust_notes/guessing_game/src/main.rs
